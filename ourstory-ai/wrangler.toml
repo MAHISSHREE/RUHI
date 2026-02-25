@@ -1,0 +1,49 @@
+name = "ourstory-ai-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Cloudflare Pages integration
+pages_build_output_dir = ""
+
+# Environment variables and secrets
+[env.production]
+name = "ourstory-ai-api-prod"
+routes = [
+  { pattern = "api.ourstory-ai.pages.dev/*", zone_id = "" }
+]
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "ourstory_db"
+database_id = "your-database-id"
+
+# KV Store for caching (optional)
+[[kv_namespaces]]
+binding = "CACHE"
+id = "your-kv-namespace-id"
+preview_id = "your-preview-kv-namespace-id"
+
+# Environment-specific bindings
+[env.production.d1_databases]
+binding = "DB"
+database_name = "ourstory_db_prod"
+database_id = "your-prod-database-id"
+
+[env.production.kv_namespaces]
+binding = "CACHE"
+id = "your-prod-kv-namespace-id"
+preview_id = "your-preview-kv-namespace-id"
+
+# Service bindings (for Groq API)
+[env.production.vars]
+GROQ_API_KEY = ""
+GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
+GROQ_MODEL = "llama-3.1-8b-instant"
+JWT_SECRET = ""
+ALLOWED_ORIGINS = "https://ourstory-ai.pages.dev"
+
+[vars]
+GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
+GROQ_MODEL = "llama-3.1-8b-instant"
+ALLOWED_ORIGINS = "http://localhost:5173"

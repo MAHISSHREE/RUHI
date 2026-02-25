@@ -1,0 +1,21 @@
+{
+  "name": "ourstory-ai-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker - Backend API for OurStory AI",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db-migrate": "wrangler d1 execute ourstory_db --file ./migrations/0001_init.sql",
+    "db-shell": "wrangler d1 execute ourstory_db --interactive",
+    "logs": "wrangler tail"
+  },
+  "dependencies": {
+    "itty-router": "^5.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
