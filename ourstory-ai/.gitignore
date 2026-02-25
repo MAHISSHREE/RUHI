@@ -1,0 +1,43 @@
+# -------------------------
+# Environment / Secrets
+# -------------------------
+.env
+.env.*
+*.key
+*.pem
+*.secret
+*.config
+
+# -------------------------
+# Node / Frontend / Backend builds
+# -------------------------
+node_modules/
+dist/
+build/
+out/
+
+# -------------------------
+# IDE / OS files
+# -------------------------
+.vscode/
+.idea/
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Python / Java specific
+# -------------------------
+*.pyc
+*.class
+*.jar
+*.war
+*.iml
+
+# -------------------------
+# Docker
+# -------------------------
+docker-compose.override.yml
+*.docker
