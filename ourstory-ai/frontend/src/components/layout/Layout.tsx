@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Heart, MessageCircle, BookHeart, LayoutDashboard, Menu, X, Sparkles } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -11,7 +11,6 @@ const navItems = [
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const location = useLocation()
 
   return (
     <div className="min-h-screen bg-paper flex">
