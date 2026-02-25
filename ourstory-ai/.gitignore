@@ -41,3 +41,11 @@ Thumbs.db
 # -------------------------
 docker-compose.override.yml
 *.docker
+
+# -------------------------
+# Local Development only (keep locally, don't commit)
+# -------------------------
+backend/
+jdk-17/
+java 17/
+jdk-17-extract/
